@@ -1,0 +1,115 @@
+:root {
+  --bg: #eaf7ff;
+  --card: #ffffff;
+  --text: #2f455f;
+  --accent: #4f8cff;
+  --accent-dark: #3f74d6;
+  --shadow: 0 12px 26px rgba(66, 121, 189, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #f1fbff 0%, var(--bg) 64%);
+}
+
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top) + 12px) 12px calc(env(safe-area-inset-bottom) + 12px);
+  display: grid;
+  gap: 10px;
+}
+
+.hud {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+  text-align: center;
+}
+
+.hud h1 {
+  margin: 4px 0;
+}
+
+.hud p {
+  margin: 0 0 8px;
+  color: #5f7d99;
+  font-size: 0.9rem;
+}
+
+.back-link {
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stats article {
+  background: #f2f8ff;
+  border-radius: 12px;
+  padding: 7px;
+}
+
+.stats span {
+  display: block;
+  color: #5c7b99;
+  font-size: 0.76rem;
+}
+
+.stats strong {
+  font-size: 1.05rem;
+}
+
+.controls {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 10px 8px;
+}
+
+.btn:active {
+  background: var(--accent-dark);
+}
+
+.btn.ghost {
+  background: #cedef8;
+  color: #345579;
+}
+
+.canvas-wrap {
+  display: grid;
+  place-items: center;
+}
+
+#gameCanvas {
+  width: min(96vw, 720px);
+  aspect-ratio: 9 / 16;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  touch-action: none;
+  background: linear-gradient(#9ddcff 0%, #6fc8ff 35%, #4cb5f8 45%, #298bd0 100%);
+}

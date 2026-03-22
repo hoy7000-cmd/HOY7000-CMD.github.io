@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>清新钓鱼小游戏</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hud">
+      <a class="back-link" href="../index.html">← 返回平台</a>
+      <h1>清新钓鱼</h1>
+      <p>点击抛竿，钩到鱼后点击或上滑收线</p>
+      <section class="stats">
+        <article><span>倒计时</span><strong id="timeText">60</strong></article>
+        <article><span>得分</span><strong id="scoreText">0</strong></article>
+        <article><span>状态</span><strong id="stateText">待命</strong></article>
+      </section>
+      <div class="controls">
+        <button id="castBtn" class="btn" type="button">抛竿</button>
+        <button id="reelBtn" class="btn" type="button">收线</button>
+        <button id="restartBtn" class="btn ghost" type="button">重新开始</button>
+      </div>
+    </header>
+
+    <section class="canvas-wrap">
+      <canvas id="gameCanvas" aria-label="钓鱼游戏画布"></canvas>
+    </section>
+  </main>
+
+  <script src="./game.js"></script>
+</body>
+</html>

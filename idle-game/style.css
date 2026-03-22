@@ -1,0 +1,206 @@
+:root {
+  --bg: #f7f9ff;
+  --text: #344054;
+  --card: #ffffff;
+  --accent: #7f9cff;
+  --accent-2: #ffc8dd;
+  --mint: #b9fbc0;
+  --shadow: 0 12px 28px rgba(73, 99, 163, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #eef3ff 0%, var(--bg) 64%);
+}
+
+body {
+  touch-action: manipulation;
+}
+
+.app {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top) + 12px) 12px calc(env(safe-area-inset-bottom) + 14px);
+  display: grid;
+  gap: 12px;
+}
+
+.top-card,
+.status-grid,
+.upgrade-card {
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.top-card {
+  padding: 14px;
+  text-align: center;
+}
+
+.top-card h1 {
+  margin: 4px 0;
+  font-size: 1.35rem;
+}
+
+.top-card p {
+  margin: 0;
+  color: #667085;
+  font-size: 0.9rem;
+}
+
+.back-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #4f74e6;
+  font-size: 0.9rem;
+}
+
+.status-grid {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.stat {
+  background: #f4f7ff;
+  border-radius: 12px;
+  padding: 8px;
+  text-align: center;
+}
+
+.stat.wide {
+  grid-column: 1 / -1;
+}
+
+.stat span {
+  display: block;
+  font-size: 0.76rem;
+  color: #667085;
+}
+
+.stat strong {
+  font-size: 1.1rem;
+}
+
+.character-wrap {
+  position: relative;
+  padding: 8px 0;
+}
+
+.hero-btn {
+  width: 100%;
+  min-height: 160px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #d7e4ff, #ffe7f0);
+  box-shadow: var(--shadow);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.08s ease;
+}
+
+.hero-btn:active {
+  transform: scale(0.98);
+}
+
+.hero-face {
+  font-size: 2.2rem;
+}
+
+.hero-tip {
+  font-size: 0.95rem;
+  color: #52617a;
+}
+
+.hero-pulse {
+  animation: pulse 240ms ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.float-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.float-text {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3350b8;
+  text-shadow: 0 1px 0 #fff;
+  animation: floatUp 850ms ease forwards;
+}
+
+.float-text.crit {
+  color: #d94a75;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translate(-50%, 0) scale(0.95);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -42px) scale(1.06);
+    opacity: 0;
+  }
+}
+
+.upgrade-card {
+  padding: 12px;
+}
+
+.upgrade-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.upgrade-btn,
+.reset-btn {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.upgrade-btn {
+  background: #e8efff;
+  color: #2f3d68;
+}
+
+.upgrade-btn:disabled {
+  opacity: 0.56;
+}
+
+.reset-btn {
+  background: #ffe4ea;
+  color: #9e3f5d;
+}

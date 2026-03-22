@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>合成方块小游戏</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hud">
+      <h1 class="title">合成方块</h1>
+      <section class="score-panel" aria-label="分数信息">
+        <div class="score-item">
+          <span class="label">分数</span>
+          <strong id="scoreValue">0</strong>
+        </div>
+        <div class="score-item">
+          <span class="label">最高分</span>
+          <strong id="bestValue">0</strong>
+        </div>
+      </section>
+      <div class="button-row">
+        <a class="btn back-btn" href="../index.html">返回平台</a>
+        <button id="restartBtn" class="btn" type="button">重新开始</button>
+      </div>
+    </header>
+
+    <section class="game-wrap">
+      <canvas id="gameCanvas" aria-label="合成方块游戏画布"></canvas>
+    </section>
+  </main>
+
+  <section id="gameOverModal" class="modal hidden" aria-live="polite">
+    <div class="modal-card">
+      <h2>游戏结束</h2>
+      <p>本局分数：<strong id="finalScoreValue">0</strong></p>
+      <p>最高分：<strong id="finalBestValue">0</strong></p>
+      <button id="playAgainBtn" class="btn" type="button">再来一局</button>
+    </div>
+  </section>
+
+  <script src="./game.js"></script>
+</body>
+</html>

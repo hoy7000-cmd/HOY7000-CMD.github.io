@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>萌宠挂机小店</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top-card">
+      <a class="back-link" href="../index.html">← 返回平台</a>
+      <h1>萌宠挂机小店</h1>
+      <p>点点主角赚金币，离线也能躺赚</p>
+    </header>
+
+    <section class="status-grid">
+      <article class="stat">
+        <span>金币</span>
+        <strong id="goldText">0</strong>
+      </article>
+      <article class="stat">
+        <span>等级</span>
+        <strong id="levelText">1</strong>
+      </article>
+      <article class="stat">
+        <span>点击收益</span>
+        <strong id="clickIncomeText">1</strong>
+      </article>
+      <article class="stat">
+        <span>自动收益/秒</span>
+        <strong id="autoIncomeText">0</strong>
+      </article>
+      <article class="stat wide">
+        <span>暴击率</span>
+        <strong id="critRateText">5%</strong>
+      </article>
+    </section>
+
+    <section class="character-wrap">
+      <button id="heroBtn" class="hero-btn" type="button" aria-label="点击主角色获得金币">
+        <span class="hero-face">૮ ˶ᵔ ᵕ ᵔ˶ ა</span>
+        <span class="hero-tip">点我赚金币</span>
+      </button>
+      <div id="floatLayer" class="float-layer" aria-hidden="true"></div>
+    </section>
+
+    <section class="upgrade-card">
+      <h2>升级商店</h2>
+      <button id="upgradeClickBtn" class="upgrade-btn" type="button"></button>
+      <button id="upgradeAutoBtn" class="upgrade-btn" type="button"></button>
+      <button id="upgradeCritBtn" class="upgrade-btn" type="button"></button>
+      <button id="resetBtn" class="reset-btn" type="button">重置存档</button>
+    </section>
+  </main>
+
+  <script src="./game.js"></script>
+</body>
+</html>

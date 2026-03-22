@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Q萌休闲合集</title>
+  <link rel="stylesheet" href="./arcade.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Q萌休闲合集</h1>
+        <p>放松一下，慢慢攒金币</p>
+      </div>
+      <div class="top-actions">
+        <button id="shopBtn" class="btn">商店</button>
+        <div class="coin-pill">金币：<strong id="globalCoinsText">0</strong></div>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-game="idle">放置挂机</button>
+      <button class="tab" data-game="gomoku">人机五子棋</button>
+      <button class="tab" data-game="fishing">钓鱼</button>
+      <button class="tab" data-game="brick">打砖块</button>
+      <button class="tab" data-game="memory">记忆翻牌</button>
+    </nav>
+
+    <section id="idlePanel" class="panel active">
+      <div class="panel-card">
+        <h2>放置挂机小店</h2>
+        <div class="stats">
+          <div><span>等级</span><strong id="idleLevel">1</strong></div>
+          <div><span>点击收益</span><strong id="idleClick">1.0</strong></div>
+          <div><span>自动收益/秒</span><strong id="idleAuto">0.1</strong></div>
+          <div><span>本局金币</span><strong id="idleLocal">0</strong></div>
+        </div>
+        <button id="idleTapBtn" class="big-btn">点击主角赚金币</button>
+        <div class="upgrades">
+          <button id="idleUpgradeClick" class="btn soft"></button>
+          <button id="idleUpgradeAuto" class="btn soft"></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="gomokuPanel" class="panel">
+      <div class="panel-card">
+        <h2>人机五子棋</h2>
+        <div class="line">
+          <div class="difficulty">
+            <button class="chip active" data-level="easy">简单</button>
+            <button class="chip" data-level="normal">普通</button>
+            <button class="chip" data-level="hard">困难</button>
+          </div>
+          <button id="gomokuRestart" class="btn soft">重新开始</button>
+        </div>
+        <p class="tiny">奖励：简单10 / 普通25 / 困难50（仅玩家获胜）</p>
+        <p class="tiny" id="gomokuState">黑棋（你）先手</p>
+        <canvas id="gomokuCanvas" class="board-canvas" aria-label="五子棋棋盘"></canvas>
+      </div>
+    </section>
+
+    <section id="fishingPanel" class="panel">
+      <div class="panel-card">
+        <h2>钓鱼小游戏</h2>
+        <div class="line">
+          <div class="tiny">白/绿/蓝/紫：5/15/30/60</div>
+          <div class="tiny">剩余 <strong id="fishTime">60</strong>s</div>
+        </div>
+        <div class="line">
+          <button id="fishCast" class="btn">抛竿</button>
+          <button id="fishReel" class="btn">收线</button>
+          <button id="fishRestart" class="btn soft">重开</button>
+        </div>
+        <p class="tiny" id="fishState">待命</p>
+        <canvas id="fishingCanvas" class="fish-canvas" aria-label="钓鱼游戏画布"></canvas>
+      </div>
+    </section>
+
+    <section id="brickPanel" class="panel">
+      <div class="panel-card">
+        <h2>可爱打砖块</h2>
+        <div class="line">
+          <div class="tiny">砖块：普通1 / 坚固3 / 稀有8金币</div>
+          <div class="tiny">关卡 <strong id="brickLevel">1</strong></div>
+        </div>
+        <div class="line">
+          <div class="tiny">生命 <strong id="brickLives">3</strong></div>
+          <div class="tiny">关卡收益 <strong id="brickStageCoins">0</strong></div>
+          <button id="brickRestart" class="btn soft">重开</button>
+        </div>
+        <p class="tiny" id="brickState">左右滑动控制挡板</p>
+        <canvas id="brickCanvas" class="brick-canvas" aria-label="打砖块游戏画布"></canvas>
+      </div>
+    </section>
+
+    <section id="memoryPanel" class="panel">
+      <div class="panel-card">
+        <h2>记忆翻牌</h2>
+        <div class="line">
+          <div class="difficulty">
+            <button class="m-chip active" data-level="easy">简单</button>
+            <button class="m-chip" data-level="normal">普通</button>
+            <button class="m-chip" data-level="hard">困难</button>
+          </div>
+          <button id="memoryRestart" class="btn soft">重开</button>
+        </div>
+        <p class="tiny">奖励：简单12 / 普通26 / 困难45（金平衡向）</p>
+        <p class="tiny" id="memoryState">翻开两张相同卡片即可消除</p>
+        <div id="memoryGrid" class="memory-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <section id="shopModal" class="modal hidden">
+    <div class="modal-card">
+      <h3>宠物商店</h3>
+      <p class="tiny">购买后可佩戴，宠物会在游戏里跟随你</p>
+      <div id="petList" class="pet-list"></div>
+      <button id="closeShop" class="btn soft full">关闭</button>
+    </div>
+  </section>
+
+  <div id="petFollower" class="pet-follower hidden">🐥</div>
+  <script src="./arcade.js"></script>
+</body>
+</html>

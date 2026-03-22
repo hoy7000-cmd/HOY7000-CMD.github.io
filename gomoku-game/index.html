@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>人机五子棋</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="back-link" href="../index.html">← 返回平台</a>
+      <h1>人机五子棋</h1>
+      <p>你执黑先手，AI执白，先连成五子获胜</p>
+    </header>
+
+    <section class="panel">
+      <div class="difficulty-wrap" aria-label="难度选择">
+        <button class="difficulty-btn active" data-difficulty="easy" type="button">简单</button>
+        <button class="difficulty-btn" data-difficulty="normal" type="button">普通</button>
+        <button class="difficulty-btn" data-difficulty="hard" type="button">困难</button>
+      </div>
+      <div class="status-item">
+        <span>当前回合</span>
+        <strong id="turnText">黑棋</strong>
+      </div>
+      <div class="status-item">
+        <span>对局状态</span>
+        <strong id="resultText">进行中</strong>
+      </div>
+      <button id="restartBtn" class="restart-btn" type="button">重新开始</button>
+    </section>
+
+    <section class="board-wrap">
+      <canvas id="boardCanvas" aria-label="五子棋棋盘"></canvas>
+    </section>
+  </main>
+
+  <script src="./game.js"></script>
+</body>
+</html>

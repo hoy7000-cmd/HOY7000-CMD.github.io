@@ -1,0 +1,148 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f8ff;
+  --card: #ffffff;
+  --text: #374151;
+  --accent: #5b8cff;
+  --accent-dark: #4877e1;
+  --shadow: 0 10px 30px rgba(91, 140, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: radial-gradient(circle at top, #eaf1ff 0%, var(--bg) 65%);
+  color: var(--text);
+}
+
+body {
+  touch-action: none;
+  overflow: hidden;
+}
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  min-height: 100%;
+  padding: calc(env(safe-area-inset-top) + 14px) 14px calc(env(safe-area-inset-bottom) + 14px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hud {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.score-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.score-item {
+  background: #f3f6ff;
+  border-radius: 12px;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.score-item .label {
+  font-size: 0.78rem;
+  color: #6b7280;
+  display: block;
+}
+
+.score-item strong {
+  font-size: 1.25rem;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.back-btn {
+  background: #7d90bd;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  background: var(--accent-dark);
+}
+
+.game-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#gameCanvas {
+  width: min(92vw, 520px);
+  aspect-ratio: 1 / 1;
+  background: #dfe9ff;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(25, 35, 63, 0.44);
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-card {
+  width: min(90vw, 360px);
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.modal-card h2 {
+  margin: 0 0 8px;
+}
+
+.modal-card p {
+  margin: 6px 0;
+}

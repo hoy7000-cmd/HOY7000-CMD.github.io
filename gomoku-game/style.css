@@ -1,0 +1,131 @@
+:root {
+  --bg: #f6f8ff;
+  --card: #ffffff;
+  --text: #334155;
+  --accent: #4f74e6;
+  --shadow: 0 12px 28px rgba(66, 98, 173, 0.2);
+  --board: #f2d7a3;
+  --line: #8a6a3a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: radial-gradient(circle at top, #edf2ff 0%, var(--bg) 62%);
+  color: var(--text);
+}
+
+.app {
+  max-width: 640px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top) + 14px) 12px calc(env(safe-area-inset-bottom) + 14px);
+  display: grid;
+  gap: 12px;
+}
+
+.topbar,
+.panel {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.topbar {
+  padding: 14px;
+  text-align: center;
+}
+
+.topbar h1 {
+  margin: 4px 0 6px;
+}
+
+.topbar p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.back-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.panel {
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.difficulty-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.difficulty-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 9px 4px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  background: #e9efff;
+  color: #3c4d7b;
+}
+
+.difficulty-btn.active {
+  background: #4f74e6;
+  color: #fff;
+}
+
+.status-item {
+  background: #f3f6ff;
+  border-radius: 12px;
+  padding: 8px;
+  text-align: center;
+}
+
+.status-item span {
+  display: block;
+  color: #64748b;
+  font-size: 0.78rem;
+}
+
+.status-item strong {
+  font-size: 1.05rem;
+}
+
+.restart-btn {
+  grid-column: 1 / -1;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: #4f74e6;
+  color: #fff;
+}
+
+.board-wrap {
+  display: grid;
+  place-items: center;
+}
+
+#boardCanvas {
+  width: min(95vw, 600px);
+  aspect-ratio: 1 / 1;
+  background: var(--board);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  touch-action: none;
+}
